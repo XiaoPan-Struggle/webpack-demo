@@ -3,6 +3,10 @@ var path = require('path')
 module.exports = {
   mode: 'development',  //production(发布)，development(开发)
   entry: './src/index.js',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   output: {
     filename: '[name].[contenthash].js'
   },
