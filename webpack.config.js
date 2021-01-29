@@ -9,5 +9,13 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     title: '首页',
     template: 'src/assets/index.html'
-  })]
+  })],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 };
