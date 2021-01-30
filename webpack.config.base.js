@@ -9,5 +9,30 @@ module.exports = {
       title: '首页',
       template: 'src/assets/index.html'
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.styl$/,
+        loader: ['style-loader', 'css-loader', 'stylus-loader']
+      },
+      {
+        test: /\.less$/,
+        loader: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('dart-sass')
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
